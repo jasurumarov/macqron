@@ -24,3 +24,34 @@
     justify-content: center;
     align-items: center;
 }
+
+.lazyLoading div {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #B3D9F3;
+}
+
+.lazyLoading__icon {
+    animation: loading 2s ease infinite;
+}
+
+@keyframes loading {
+    0% {
+        scale: 0.95;
+        transform: rotateY(180deg);
+    }
+
+    50% {
+        scale: 1;
+        transform: rotateY(360deg);
+    }
+
+    100% {
+        scale: 0.95;
+        transform: rotateY(180deg);
+    }
+}

@@ -10,6 +10,7 @@ import Cart from './pages/cart/Cart'
 import SupHeader from "./components/supHeader/SupHeader"
 import SubHeader from "./components/subHeader/SubHeader"
 import Footer from "./components/footer/Footer"
+import LazyLoading from './components/lazyLoading/LazyLoading'
 
 function App() {
   return (

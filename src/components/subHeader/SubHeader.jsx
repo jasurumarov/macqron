@@ -29,8 +29,8 @@ const SubHeader = () => {
                 <nav>
                     <ul className="subHeader__links">
                         <li>СЛАДКИЕ ДНИ <span>%</span></li>
-                        <li>Создать дизайн</li>
-                        <li>КОМПАНИЯМ</li>
+                        <li>ЛЕНИВАЯ ЗАГРУЗКА</li>
+                        <li>КОМПАНЯМ</li>
                     </ul>
                     <Link to={'/'}>
                         <img src={SiteLogo} alt="site logo" />
