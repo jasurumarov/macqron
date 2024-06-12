@@ -1,0 +1,170 @@
+.products-section {
+    background: #F7F7F7;
+    padding-top: 41px;
+    padding-bottom: 80px;
+
+    &__content {
+        .products__pagination {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 17.05px;
+            color: #989898;
+            cursor: pointer;
+            user-select: none;
+            margin-bottom: 22px;
+
+            span {
+                color: #4E9DD3;
+            }
+        }
+
+        h1 {
+            font-family: Montserrat600;
+            font-size: 30px;
+            line-height: 36.57px;
+            text-align: center;
+            color: #292929;
+            margin-bottom: 38px;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            li {
+                cursor: pointer;
+                padding: 12px 14px;
+                color: #292929D4;
+                background: #F7EBE5;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 17.05px;
+                border-radius: 100px;
+                user-select: none;
+                transition: .2s;
+
+                &:active {
+                    scale: .96;
+                }
+            }
+        }
+
+        .products__cards {
+            margin-top: 41px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            .products__card {
+                background: white;
+                max-width: 370px;
+                border: 1px solid #EDEDF0;
+                overflow: hidden;
+                border-radius: 5px;
+
+                &:hover {
+                    .products__card-img {
+                        img {
+                            scale: 1.02;
+                        }
+                    }
+                }
+
+                .products__card-img {
+                    overflow: hidden;
+                    width: 370px;
+                    height: 300px;
+
+                    img {
+                        transition: .2s;
+                        cursor: pointer;
+                        width: 370px;
+                        height: 300px;
+                        object-fit: contain;
+                    }
+                }
+
+                .products__card-title {
+                    padding: 21px;
+                    border-bottom: 1px solid #EDEDF0;
+
+                    h3 {
+                        margin-bottom: 14px;
+                        font-family: Montserrat600;
+                        font-size: 18px;
+                        line-height: 21.94px;
+                        color: #292929;
+                    }
+
+                    p {
+                        color: #292929;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 17.05px;
+
+                    }
+                }
+
+                .products__card-prices {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 22px;
+
+                    h4 {
+                        padding: 15px 0;
+                        color: #E7426A;
+                        font-family: Montserrat600;
+                        font-size: 18px;
+                        line-height: 21.94px;
+
+                    }
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        gap: 11px;
+                        border-left: 1px solid #EDEDF0;
+                        padding: 13px 0;
+                        padding-left: 23px;
+                        font-family: Montserrat600;
+                        font-size: 14px;
+                        line-height: 17.07px;
+
+                    }
+                }
+            }
+
+        }
+
+        .products__seemore {
+            margin-top: 41px;
+            display: flex;
+            justify-content: center;
+
+            button {
+                border: 1px solid #4E9DD3;
+                padding: 16px 82px;
+                border-radius: 5px;
+                font-family: Montserrat600;
+                font-size: 14px;
+                line-height: 17.07px;
+                text-align: center;
+                transition: .2s;
+
+                &:hover {
+                    background: #4E9DD3;
+                    color: white;
+                }
+
+                &:active {
+                    scale: .98;
+                }
+
+            }
+        }
+    }
+}
