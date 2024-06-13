@@ -4,14 +4,20 @@ import { BrowserRouter } from 'react-router-dom'
 const App = lazy(() => import('./App'))
 import './global.css'
 
+// Redux Toolkit
+import { Provider } from 'react-redux'
+import { store } from './context/store'
+
 // Components
 import LazyLoading from './components/lazyLoading/LazyLoading'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<LazyLoading/>}>
+    <Suspense fallback={<LazyLoading />}>
       <BrowserRouter>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </Suspense>
   </React.StrictMode>,
