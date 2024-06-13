@@ -27,16 +27,19 @@
             margin-bottom: 38px;
         }
 
-        ul {
+        .products__category-list {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
 
-            li {
+            .products__category-listItem {
                 cursor: pointer;
                 padding: 12px 14px;
+                text-transform: capitalize;
                 color: #292929D4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 background: #F7EBE5;
                 font-size: 14px;
                 font-weight: 400;
@@ -96,6 +99,10 @@
                         font-size: 18px;
                         line-height: 21.94px;
                         color: #292929;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                        overflow: hidden;
                     }
 
                     p {

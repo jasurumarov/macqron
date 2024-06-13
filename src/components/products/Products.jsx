@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
+
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
 
 // Components
 import Model from '../model/Model'
 
 // Images
 import CartIcon from '../../assets/icons/cart.svg'
-import CardImg from '../../assets/images/product-img.png'
 import { IoStar } from 'react-icons/io5'
 import { IoMdClose } from 'react-icons/io'
 
-const Products = ({ data, error, loading }) => {
+const Products = ({ data, error, loading, category }) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [detailData, setDetailData] = useState(null)
 
@@ -31,18 +37,22 @@ const Products = ({ data, error, loading }) => {
     setSearchParams({})
   }
 
+  let categories = category?.map(category => (
+    <SwiperSlide className='products__category-listItem' key={category}>{category}</SwiperSlide>
+  ))
+
   let products = data?.map(product => (
     <div key={product.id} className="products__card">
       <div className="products__card-img">
         <img onClick={() => setSearchParams({ detail: product.id })} src={product.images[0]} alt="card img" />
       </div>
       <div className="products__card-title">
-        <h3>Сердце</h3>
-        <p>24 штуки в коробке в виде сердца. <br />
-          Ассорти из 6 вкусов </p>
+        <h3 title={product.title}>{product.title}</h3>
+        <p>{product.stock} штуки в коробке в виде сердца. <br />
+          Ассорти из {Math.round(product.rating)} вкусов </p>
       </div>
       <div className="products__card-prices">
-        <h4>2800 руб</h4>
+        <h4>{product.price} руб</h4>
         <button><img src={CartIcon} alt="cart icon" /> В корзину</button>
       </div>
     </div>
@@ -53,18 +63,17 @@ const Products = ({ data, error, loading }) => {
         <div className="products-section__content">
           <p className="products__pagination">Главная &gt; Каталог &gt; <span>Готовые наборы</span></p>
           <h1>Готовые наборы</h1>
-          <ul className="products__category-list">
-            <li>Свадьба</li>
-            <li>Девичник</li>
-            <li>День рождения </li>
-            <li>8 марта</li>
-            <li>23 февраля</li>
-            <li>Новый год</li>
-            <li>День учителя</li>
-            <li>День тренера</li>
-            <li>Пасха</li>
-            <li>Без печати</li>
-          </ul>
+          <Swiper
+            slidesPerView={6}
+            spaceBetween={8}
+            freeMode={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[FreeMode]}
+            className="products__category-list">
+            {categories}
+          </Swiper>
           <div className="products__cards">
             {products}
             {detailData ?
@@ -96,7 +105,8 @@ const Products = ({ data, error, loading }) => {
                 </div>
                 <button onClick={() => {
                   setSearchParams({})
-                  setDetailData(null)}} className='detail__close'><IoMdClose /></button>
+                  setDetailData(null)
+                }} className='detail__close'><IoMdClose /></button>
               </Model>
               : <></>
             }
