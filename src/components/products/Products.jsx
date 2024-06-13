@@ -15,6 +15,8 @@ const Products = ({ data, error, loading }) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [detailData, setDetailData] = useState(null)
 
+  document.body.style.overflow = detailData ? 'hidden' : 'auto'
+
   useEffect(() => {
     let id = searchParams.get("detail")
     if (id) {
