@@ -1,59 +1,11 @@
+.home-page {
+    background: #F7F7F7;
+}
+
 .products-section {
     background: #F7F7F7;
-    padding-top: 41px;
 
     &__content {
-        .products__pagination {
-            text-align: center;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 17.05px;
-            color: #989898;
-            cursor: pointer;
-            user-select: none;
-            margin-bottom: 22px;
-
-            span {
-                color: #4E9DD3;
-            }
-        }
-
-        h1 {
-            font-family: Montserrat600;
-            font-size: 30px;
-            line-height: 36.57px;
-            text-align: center;
-            color: #292929;
-            margin-bottom: 38px;
-        }
-
-        .products__category-list {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .products__category-listItem {
-                cursor: pointer;
-                padding: 12px 14px;
-                text-transform: capitalize;
-                color: #292929D4;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: #F7EBE5;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 17.05px;
-                border-radius: 100px;
-                user-select: none;
-                transition: .2s;
-
-                &:active {
-                    scale: .96;
-                }
-            }
-        }
-
         .products__cards {
             margin-top: 41px;
             display: flex;
@@ -174,5 +126,57 @@
             scale: .98;
         }
 
+    }
+}
+
+.products__pagination {
+    padding-top: 41px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17.05px;
+    color: #989898;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 22px;
+
+    span {
+        color: #4E9DD3;
+    }
+}
+
+h1 {
+    font-family: Montserrat600;
+    font-size: 30px;
+    line-height: 36.57px;
+    text-align: center;
+    color: #292929;
+    margin-bottom: 38px;
+}
+
+.products__category-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .products__category-listItem {
+        cursor: pointer;
+        padding: 12px 14px;
+        text-transform: capitalize;
+        color: #292929D4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #F7EBE5;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17.05px;
+        border-radius: 100px;
+        user-select: none;
+        transition: .2s;
+
+        &:active {
+            scale: .96;
+        }
     }
 }

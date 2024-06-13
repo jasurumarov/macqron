@@ -1,13 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
-
-// Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
 
 // Components
 import Model from '../model/Model'
@@ -17,7 +10,7 @@ import CartIcon from '../../assets/icons/cart.svg'
 import { IoStar } from 'react-icons/io5'
 import { IoMdClose } from 'react-icons/io'
 
-const Products = ({ data, error, loading, category }) => {
+const Products = ({ data, error, loading }) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [detailData, setDetailData] = useState(null)
 
@@ -36,10 +29,6 @@ const Products = ({ data, error, loading, category }) => {
     setDetailData(null)
     setSearchParams({})
   }
-
-  let categories = category?.map(category => (
-    <SwiperSlide className='products__category-listItem' key={category}>{category}</SwiperSlide>
-  ))
 
   let products = data?.map(product => (
     <div key={product.id} className="products__card">
@@ -61,19 +50,6 @@ const Products = ({ data, error, loading, category }) => {
     <section className='products-section'>
       <div className="container">
         <div className="products-section__content">
-          <p className="products__pagination">Главная &gt; Каталог &gt; <span>Готовые наборы</span></p>
-          <h1>Готовые наборы</h1>
-          <Swiper
-            slidesPerView={6}
-            spaceBetween={8}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[FreeMode]}
-            className="products__category-list">
-            {categories}
-          </Swiper>
           <div className="products__cards">
             {products}
             {detailData ?
